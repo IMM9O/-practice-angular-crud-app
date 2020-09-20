@@ -1,0 +1,24 @@
+{
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "value-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "declaration-no-important": true,
+    "block-no-empty": null,
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "unit-whitelist": [
+      "em",
+      "s",
+      "deg",
+      "vh",
+      "vw",
+      "%",
+      "px",
+      "dpi",
+      "dppx",
+      "fr"
+    ]
+  },
+  "extends": ["stylelint-config-prettier"]
+}

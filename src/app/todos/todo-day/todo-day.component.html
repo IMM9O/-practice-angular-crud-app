@@ -1,0 +1,10 @@
+<div class="todo-day">
+  <div class="todo-day-full">
+    <div class="todo-day-number">{{ dayTimestamp | date: 'dd' }}</div>
+    <div class="todo-day-my">
+      <div class="todo-day-m">{{ dayTimestamp | date: 'MMM' }}</div>
+      <div class="todo-day-y">{{ dayTimestamp | date: 'yyyy' }}</div>
+    </div>
+  </div>
+  <div class="todo-day-week">{{ dayTimestamp | date: 'EEE' | uppercase }}</div>
+</div>

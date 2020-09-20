@@ -1,0 +1,4 @@
+<div class="todo-list">
+  <app-todo-day class="todo-list-day"></app-todo-day>
+  <todo *ngFor="let todo of todos" [todo]="todo" class="todo-list-item"></todo>
+</div>

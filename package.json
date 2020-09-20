@@ -1,0 +1,64 @@
+{
+  "name": "ng-crud",
+  "version": "0.0.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "format:check": "prettier --list-different --write \"src/**/*.{scss,ts,html}\"",
+    "lint:angular": "ng lint --format=stylish --fix",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.0.5",
+    "@angular/common": "~10.0.5",
+    "@angular/compiler": "~10.0.5",
+    "@angular/core": "~10.0.5",
+    "@angular/forms": "~10.0.5",
+    "@angular/platform-browser": "~10.0.5",
+    "@angular/platform-browser-dynamic": "~10.0.5",
+    "@angular/router": "~10.0.5",
+    "rxjs": "~6.5.5",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1000.4",
+    "@angular/cli": "~10.0.4",
+    "@angular/compiler-cli": "~10.0.5",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "husky": "^4.3.0",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "protractor": "~7.0.0",
+    "stylelint": "^13.7.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.1.2",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.9.5",
+    "webpack-bundle-analyzer": "^3.9.0"
+  }
+}

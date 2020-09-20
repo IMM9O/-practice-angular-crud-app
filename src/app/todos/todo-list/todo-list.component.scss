@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  .todo-list {
+    width: 32em;
+    padding: 0 3em;
+    background-color: #fff;
+    border-radius: 0.2em;
+    border: 1px solid #707070;
+    // box-shadow: 0 8px 6px -6px #000000;
+    &-day {
+      margin: 3em 0;
+    }
+    &-item {
+      margin-bottom: 2em;
+    }
+  }
+}
