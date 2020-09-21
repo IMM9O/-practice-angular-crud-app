@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
+import { ITodo } from 'src/models/ITodo';
 import { StoreService } from 'src/app/store/store.service';
 @Component({
   selector: 'todo-list',
@@ -14,5 +15,13 @@ export class TodoListComponent implements OnInit {
 
   get todos() {
     return this.storeService.todos;
+  }
+
+  addTodoEvent() {
+    console.log('add Todo Event');
+  }
+
+  TrackByFunction(index, todo: ITodo) {
+    return todo.id;
   }
 }

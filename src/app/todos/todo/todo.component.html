@@ -1,4 +1,4 @@
 <div class="todo-item">
-  <label [for]="todo?.id">{{ todo?.task }}</label>
+  <label [for]="todo?.id" [ngStyle]="getStyle()">{{ todo?.task }}</label>
   <input type="checkbox" [id]="todo?.id" [checked]="todo?.isDone" />
 </div>

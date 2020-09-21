@@ -10,4 +10,12 @@ import { ITodo } from 'src/models/ITodo';
 })
 export class TodoComponent {
   @Input() todo: ITodo;
+
+  getStyle() {
+    if (this.todo && this.todo.isDone) {
+      return {
+        color: 'var(--text-muted)',
+      };
+    }
+  }
 }

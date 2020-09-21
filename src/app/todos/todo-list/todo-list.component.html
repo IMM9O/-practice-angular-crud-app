@@ -1,4 +1,12 @@
 <div class="todo-list">
   <app-todo-day class="todo-list-day"></app-todo-day>
-  <todo *ngFor="let todo of todos" [todo]="todo" class="todo-list-item"></todo>
+  <todo
+    *ngFor="let todo of todos; trackBy: TrackByFunction"
+    [todo]="todo"
+    class="todo-list-item"
+  ></todo>
+  <app-add-btn
+    class="todo-list-add"
+    (btnClicked)="addTodoEvent()"
+  ></app-add-btn>
 </div>
