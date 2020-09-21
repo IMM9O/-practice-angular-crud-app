@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  .add-btn {
+    font-size: 3em;
+    width: 2em;
+    height: 2em;
+    background-color: #50e3a4;
+    box-shadow: 0 3px 10px #3ec088;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    color: #46be8b;
+    cursor: pointer;
+  }
+}
