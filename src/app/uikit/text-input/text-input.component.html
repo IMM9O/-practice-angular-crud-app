@@ -4,10 +4,5 @@
   [type]="filedType"
   [placeholder]="filedLabel"
   [formControl]="control"
+  [class.has-error]="validationErrors$ | async"
 />
-
-<ng-container *ngIf="showError">
-  <ng-container *ngIf="validationErrors$ | async as errors">
-    {{ errors }}
-  </ng-container>
-</ng-container>

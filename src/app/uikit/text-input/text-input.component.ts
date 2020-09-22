@@ -35,7 +35,6 @@ export class TextInputComponent implements DoCheck {
   public validationErrors$ = this._validationErrors.asObservable();
 
   ngDoCheck() {
-    console.log(this.control);
     if (this.control && this.control.touched && this.control.invalid) {
       this._validationErrors.next(this.control['errors']);
     } else {

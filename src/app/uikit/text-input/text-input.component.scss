@@ -4,8 +4,8 @@
     padding: 1em;
     border: solid 1px #d5d7e0;
     box-shadow: none;
-    &:focus:not(.has-error) {
-      box-shadow: 0 0 4px 0 rgba(#2196f3, 0.4);
+    &.has-error {
+      border: 1px solid red;
     }
   }
 }
