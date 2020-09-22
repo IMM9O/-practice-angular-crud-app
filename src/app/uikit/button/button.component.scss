@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  .app-btn {
+    padding: 1em;
+    border: solid 1px currentColor;
+    background: transparent;
+    cursor: pointer;
+    color: currentColor;
+  }
+}

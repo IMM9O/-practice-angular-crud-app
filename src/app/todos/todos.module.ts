@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -16,7 +17,7 @@ import { TodoActionDirective } from './todo-action.directive';
     TodoDayComponent,
     TodoActionDirective,
   ],
-  imports: [CommonModule, UIKitModule, StoreModule],
+  imports: [CommonModule, ReactiveFormsModule, UIKitModule, StoreModule],
   exports: [TodoListComponent],
 })
 export class TodosModule {}

@@ -1,10 +1,39 @@
-<div class="todo-item">
-  <label [for]="todo?.id" [ngStyle]="getStyle()">{{ todo?.title }}</label>
-  <input
-    type="checkbox"
-    [id]="todo?.id"
-    [checked]="todo?.completed"
-    (change)="checkedAction()"
-  />
-  <button (click)="deleteAction()">Delete</button>
+<div
+  class="todo-item"
+  (mouseenter)="showAction = true"
+  (mouseleave)="showAction = false"
+>
+  <label *ngIf="!editMode" [for]="todo?.id" [ngStyle]="getStyle()">
+    {{ todo?.title }}
+  </label>
+
+  <form *ngIf="editMode" [formGroup]="form">
+    <app-text-input
+      [filedLabel]="'Add title for your todo'"
+      [fieldId]="'todo-' + todo?.id"
+      [control]="form?.get('title')"
+    >
+    </app-text-input>
+  </form>
+
+  <div class="todo-item-actions">
+    <ng-container *ngIf="showAction && !editMode">
+      <app-button (btnClicked)="deleteAction()">📨</app-button>
+      <app-button (btnClicked)="editMode = true">✏</app-button>
+    </ng-container>
+
+    <ng-container *ngIf="!showAction || editMode">
+      <ng-container *ngIf="editMode">
+        <app-button (btnClicked)="editAction()">✔</app-button>
+        <app-button (btnClicked)="editMode = false">❌</app-button>
+      </ng-container>
+      <input
+        *ngIf="!editMode"
+        type="checkbox"
+        [id]="todo?.id"
+        [checked]="todo?.completed"
+        (change)="checkedAction()"
+      />
+    </ng-container>
+  </div>
 </div>

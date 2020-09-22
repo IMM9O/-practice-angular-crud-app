@@ -38,11 +38,21 @@ export class TodoStoreService {
     let todo = this.todos.find((todo) => todo.id === id);
     if (todo) {
       const index = this.todos.indexOf(todo);
-      this.todos[index] = {
+      const updatedTodo = {
         ...todo,
         title,
       };
-      this.todos = [...this.todos];
+      this._todoClient.updateTodo(updatedTodo, id).subscribe(
+        (_) => {
+          this.todos[index] = updatedTodo;
+          this.todos = [...this.todos];
+        },
+        (err) => {
+          // do this because jsonplacholder doesn't acutely create resources
+          this.todos[index] = updatedTodo;
+          this.todos = [...this.todos];
+        }
+      );
     }
   }
   removeTodo(id: number) {

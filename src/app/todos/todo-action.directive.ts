@@ -9,6 +9,10 @@ import { ITodo } from 'src/models/ITodo';
 export class TodoActionDirective {
   constructor(private _storeService: StoreService) {}
 
+  @HostListener('editNotify', ['$event'])
+  onEditNotify($event: ITodo) {
+    this._storeService.editTodo($event?.id, $event?.title);
+  }
   @HostListener('checkedNotify', ['$event'])
   onCheckedNotify($event: ITodo) {
     console.log($event);

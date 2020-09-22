@@ -1,0 +1,13 @@
+<input
+  class="form-control"
+  [id]="fieldId"
+  [type]="filedType"
+  [placeholder]="filedLabel"
+  [formControl]="control"
+/>
+
+<ng-container *ngIf="showError">
+  <ng-container *ngIf="validationErrors$ | async as errors">
+    {{ errors }}
+  </ng-container>
+</ng-container>

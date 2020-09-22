@@ -4,5 +4,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 -1em;
+    > * {
+      margin: 0 1em;
+    }
+    &-actions {
+      display: flex;
+      align-items: center;
+
+      > *:not(:last-child) {
+        margin: 0 0.5em;
+      }
+    }
   }
 }
