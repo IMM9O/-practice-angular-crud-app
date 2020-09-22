@@ -1,4 +1,10 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 import { ITodo } from 'src/models/ITodo';
 
@@ -10,12 +16,22 @@ import { ITodo } from 'src/models/ITodo';
 })
 export class TodoComponent {
   @Input() todo: ITodo;
+  @Output() checkedNotify = new EventEmitter<ITodo>(null);
+  @Output() deleteNotify = new EventEmitter<ITodo>(null);
 
   getStyle() {
-    if (this.todo && this.todo.isDone) {
+    if (this.todo && this.todo.completed) {
       return {
         color: 'var(--text-muted)',
       };
     }
+  }
+
+  checkedAction() {
+    this.checkedNotify.emit(this.todo);
+  }
+
+  deleteAction() {
+    this.deleteNotify.emit(this.todo);
   }
 }

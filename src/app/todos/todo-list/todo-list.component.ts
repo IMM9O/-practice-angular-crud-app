@@ -8,17 +8,13 @@ import { StoreService } from 'src/app/store/store.service';
   styleUrls: ['./todo-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoListComponent implements OnInit {
-  constructor(private storeService: StoreService) {}
-
-  ngOnInit(): void {}
-
-  get todos() {
-    return this.storeService.todos;
-  }
+export class TodoListComponent {
+  constructor(public storeService: StoreService) {}
 
   addTodoEvent() {
-    console.log('add Todo Event');
+    // this.storeService.addTodo('Hello rxjs!');
+    // TODO: show add todo form
+    // TODO: submit the form to call addTodo
   }
 
   TrackByFunction(index, todo: ITodo) {

@@ -1,47 +1,28 @@
 import { Injectable } from '@angular/core';
 
-import { ITodo } from 'src/models/ITodo';
+import { TodoStoreService } from './todos/todo-store.service';
+import { TodoClientService } from './todos/todo-client.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class StoreService {
-  todos: ITodo[] = [
-    {
-      id: 1,
-      task: 'Buy new sweatshirt',
-      isDone: true,
-    },
-    {
-      id: 2,
-      task: 'Begin promotional phase',
-      isDone: true,
-    },
-    {
-      id: 3,
-      task: 'Read an article',
-      isDone: false,
-    },
-    {
-      id: 4,
-      task: 'Try not to fall asleep',
-      isDone: false,
-    },
-    {
-      id: 5,
-      task: 'Watch Sherlock',
-      isDone: false,
-    },
-    {
-      id: 6,
-      task: 'Begin QA for the product',
-      isDone: false,
-    },
-    {
-      id: 7,
-      task: 'Go for a walk',
-      isDone: false,
-    },
-  ];
-  constructor() {}
+  constructor(private _todoStore: TodoStoreService) {
+    this._todoStore.addTodos();
+  }
+
+  get todos$() {
+    return this._todoStore.todos$;
+  }
+
+  addTodo(title: string) {
+    this._todoStore.addTodo(title);
+  }
+  editTodo(id: number, title: string) {
+    this._todoStore.editTodo(id, title);
+  }
+  removeTodo(id: number) {
+    this._todoStore.removeTodo(id);
+  }
+  setCompleted(id: number, isDone: boolean) {
+    this._todoStore.setCompleted(id, isDone);
+  }
 }

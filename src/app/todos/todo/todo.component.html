@@ -1,4 +1,10 @@
 <div class="todo-item">
-  <label [for]="todo?.id" [ngStyle]="getStyle()">{{ todo?.task }}</label>
-  <input type="checkbox" [id]="todo?.id" [checked]="todo?.isDone" />
+  <label [for]="todo?.id" [ngStyle]="getStyle()">{{ todo?.title }}</label>
+  <input
+    type="checkbox"
+    [id]="todo?.id"
+    [checked]="todo?.completed"
+    (change)="checkedAction()"
+  />
+  <button (click)="deleteAction()">Delete</button>
 </div>
