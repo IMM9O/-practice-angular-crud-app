@@ -9,6 +9,7 @@ import { TodoDayComponent } from './todo-day/todo-day.component';
 import { UIKitModule } from 'src/app/uikit/uikit.module';
 import { StoreModule } from 'src/app/store/store.module';
 import { TodoActionDirective } from './todo-action.directive';
+import { TodoFormComponent } from './todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { TodoActionDirective } from './todo-action.directive';
     TodoListComponent,
     TodoDayComponent,
     TodoActionDirective,
+    TodoFormComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, UIKitModule, StoreModule],
   exports: [TodoListComponent],

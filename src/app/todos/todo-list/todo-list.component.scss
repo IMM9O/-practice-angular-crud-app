@@ -1,7 +1,7 @@
 :host {
   display: block;
   .todo-list {
-    width: 26em;
+    max-width: 26em;
     padding: 0 3em 3em;
     background-color: #fff;
     border-radius: 0.2em;
@@ -18,11 +18,18 @@
       margin-bottom: 2em;
     }
 
-    &-add {
+    &-add,
+    &-form {
       position: absolute;
-      bottom: -3em;
       left: 50%;
       transform: translateX(-50%);
+    }
+    &-add {
+      bottom: -3em;
+    }
+    &-form {
+      bottom: -1em;
+      background-color: #fff;
     }
   }
 }

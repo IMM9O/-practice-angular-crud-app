@@ -15,7 +15,6 @@ export class TodoActionDirective {
   }
   @HostListener('checkedNotify', ['$event'])
   onCheckedNotify($event: ITodo) {
-    console.log($event);
     this._storeService.setCompleted($event?.id, !$event?.completed);
   }
 

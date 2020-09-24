@@ -9,12 +9,11 @@ import { StoreService } from 'src/app/store/store.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent {
+  addMode: boolean = false;
   constructor(public storeService: StoreService) {}
 
-  addTodoEvent() {
-    // this.storeService.addTodo('Hello rxjs!');
-    // TODO: show add todo form
-    // TODO: submit the form to call addTodo
+  addTodoEvent(title: string) {
+    this.storeService.addTodo(title);
   }
 
   TrackByFunction(index, todo: ITodo) {

@@ -1,0 +1,10 @@
+<form class="todo-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-text-input
+    [filedLabel]="'Add title for your todo'"
+    [fieldId]="'todo-new'"
+    [control]="form?.get('title')"
+  >
+  </app-text-input>
+  <app-button [type]="'submit'">✔</app-button>
+  <app-button (btnClicked)="onFinished()">❌</app-button>
+</form>

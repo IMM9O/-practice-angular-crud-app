@@ -7,6 +7,17 @@
     appTodoAction
   >
   </todo>
-  <app-add-btn class="todo-list-add" (btnClicked)="addTodoEvent()">
+  <app-add-btn
+    *ngIf="!addMode"
+    class="todo-list-add"
+    (btnClicked)="addMode = true"
+  >
   </app-add-btn>
+  <app-todo-form
+    *ngIf="addMode"
+    class="todo-list-form"
+    (addNotify)="addTodoEvent($event)"
+    (finishedNotify)="addMode = false"
+  >
+  </app-todo-form>
 </div>

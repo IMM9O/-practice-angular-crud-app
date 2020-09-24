@@ -14,10 +14,11 @@
     "lint:angular": "ng lint --format=stylish --fix",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --stats-json --project=ng-crud",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:report": "webpack-bundle-analyzer dist/ng-crud/stats.json"
   },
   "private": true,
   "dependencies": {
