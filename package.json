@@ -9,16 +9,18 @@
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
+  "home": "https://IMM9O.github.io/ng-crud/",
   "scripts": {
     "format:check": "prettier --list-different --write \"src/**/*.{scss,ts,html}\"",
     "lint:angular": "ng lint --format=stylish --fix",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --stats-json --project=ng-crud",
+    "build": "ng build --base-href=ng-crud/ --prod --stats-json --project=ng-crud",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:report": "webpack-bundle-analyzer dist/ng-crud/stats.json"
+    "build:report": "webpack-bundle-analyzer dist/ng-crud/stats.json",
+    "ng:deploy": "ng deploy --base-href=https://imm9o.github.io/ng-crud/"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^6.0.0",
     "husky": "^4.3.0",
     "jasmine-core": "~3.5.0",
