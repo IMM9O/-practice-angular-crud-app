@@ -5,6 +5,10 @@
     [control]="form?.get('title')"
   >
   </app-text-input>
-  <app-button [type]="'submit'">✔</app-button>
-  <app-button (btnClicked)="onFinished()">❌</app-button>
+  <app-button small [type]="'submit'">
+    <img src="/assets/done-button.svg" alt="done" />
+  </app-button>
+  <app-button small (btnClicked)="onFinished()">
+    <img src="/assets/cancel-button.svg" alt="cancel" />
+  </app-button>
 </form>

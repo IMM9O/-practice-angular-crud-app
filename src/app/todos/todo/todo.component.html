@@ -18,22 +18,29 @@
 
   <div class="todo-item-actions">
     <ng-container *ngIf="showAction && !editMode">
-      <app-button (btnClicked)="deleteAction()">📨</app-button>
-      <app-button (btnClicked)="editMode = true">✏</app-button>
+      <app-button small (btnClicked)="deleteAction()">
+        <img [src]="'/assets/delete-button.svg'" alt="delete" />
+      </app-button>
+      <app-button small (btnClicked)="editMode = true">
+        <img [src]="'/assets/edit-button.svg'" alt="edit" />
+      </app-button>
     </ng-container>
 
     <ng-container *ngIf="!showAction || editMode">
       <ng-container *ngIf="editMode">
-        <app-button (btnClicked)="editAction()">✔</app-button>
-        <app-button (btnClicked)="editMode = false">❌</app-button>
+        <app-button small (btnClicked)="editAction()">
+          <img [src]="'/assets/done-button.svg'" alt="done" />
+        </app-button>
+        <app-button small (btnClicked)="editMode = false">
+          <img [src]="'/assets/cancel-button.svg'" alt="cancel" />
+        </app-button>
       </ng-container>
-      <input
-        *ngIf="!editMode"
-        type="checkbox"
-        [id]="todo?.id"
-        [checked]="todo?.completed"
-        (change)="checkedAction()"
-      />
     </ng-container>
+    <input
+      type="checkbox"
+      [id]="todo?.id"
+      [checked]="todo?.completed"
+      (change)="checkedAction()"
+    />
   </div>
 </div>

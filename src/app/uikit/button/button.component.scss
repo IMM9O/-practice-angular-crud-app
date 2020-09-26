@@ -8,3 +8,8 @@
     color: currentColor;
   }
 }
+
+:host[small] {
+  width: 3em;
+  height: 3em;
+}
